@@ -14,14 +14,17 @@ class AuthenticatorController
   finish: (request, response) =>
     { callbackUrl } = request.session
     debug 'sucessful', callbackUrl, request.user
-    return response.send(request.user) unless callbackUrl?
-    delete request.session.callbackUrl
+    request.session.destroy (error) =>
+      return response.sendError error if error?
+      return response.send(request.user) unless callbackUrl?
+      response.redirect @_rebuildUrl { callbackUrl }
+
+  _rebuildUrl: ({ callbackUrl }) =>
     uriParams = url.parse callbackUrl, true
     delete uriParams.search
     uriParams.query ?= {}
     uriParams.query.uuid = 'hello-uuid'
     uriParams.query.token = 'hello-token'
-    rebuiltUrl = url.format(uriParams)
-    return response.redirect rebuiltUrl
+    return url.format uriParams
 
 module.exports = AuthenticatorController
