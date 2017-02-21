@@ -1,12 +1,11 @@
-AuthenticatorController = require './controllers/authenticator-controller'
+passport = require 'passport'
 
 class Router
-  constructor: ({ @authenticatorService }) ->
-    throw new Error 'Missing authenticatorService' unless @authenticatorService?
+  constructor: ({ @authenticatorController }) ->
+    throw new Error 'Router: requires authenticatorController' unless @authenticatorController?
 
   route: (app) =>
-    authenticatorController = new AuthenticatorController { @authenticatorService }
-
-    app.get '/authenticate', authenticatorController.authenticate
+    app.get '/authenticate', @authenticatorController.initialize, passport.authenticate('saml')
+    app.post '/authenticate/callback', passport.authenticate('saml', { failureRedirect: '/' }), @authenticatorController.finish
 
 module.exports = Router

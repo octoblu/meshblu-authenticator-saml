@@ -42,8 +42,11 @@
     "debug": "^2.2.0",
     "envalid": "^2.4.2",
     "express-octoblu": "^3.0.0",
+    "express-session": "^1.15.1",
     "lodash": "^4.15.0",
     "meshblu-config": "^6.0.0",
+    "passport": "^0.3.2",
+    "passport-saml": "^0.15.0",
     "server-destroy": "^1.0.1",
     "sigterm-handler": "^2.0.0"
   },

@@ -104,7 +104,7 @@ async@^2.0.1:
   dependencies:
     lodash "^4.14.0"
 
-async@~0.2.6:
+async@~0.2.6, async@~0.2.7:
   version "0.2.10"
   resolved "https://registry.yarnpkg.com/async/-/async-0.2.10.tgz#b6bbe0b0674b9d719708ca38de8c237cb526c3d1"
 
@@ -194,6 +194,10 @@ babylon@^6.11.0, babylon@^6.13.0, babylon@^6.15.0:
 balanced-match@^0.4.1:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-0.4.2.tgz#cb3f3e3c732dc0f01ee70b403f302e61d7709838"
+
+base64-url@1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/base64-url/-/base64-url-1.3.3.tgz#f8b6c537f09a4fc58c99cb86e0b0e9c61461a20f"
 
 basic-auth@~1.1.0:
   version "1.1.0"
@@ -457,6 +461,10 @@ cors@^2.8.0:
   dependencies:
     vary "^1"
 
+crc@3.4.4:
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/crc/-/crc-3.4.4.tgz#9da1e980e3bd44fc5c93bf5ab3da3378d85e466b"
+
 cross-spawn@^4:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-4.0.2.tgz#7b9247621c23adfdd3856004a823cbe397424d41"
@@ -552,6 +560,10 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
+ejs@~0.8.3:
+  version "0.8.8"
+  resolved "https://registry.yarnpkg.com/ejs/-/ejs-0.8.8.tgz#ffdc56dcc35d02926dd50ad13439bbc54061d598"
+
 encodeurl@~1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.1.tgz#79e3d58655346909fe6f0f45a5de68103b294d20"
@@ -638,6 +650,20 @@ express-package-version@0.0.2:
   resolved "https://registry.yarnpkg.com/express-package-version/-/express-package-version-0.0.2.tgz#47c73cf3c6612e10699a3da56c6799dfcc2b9302"
   dependencies:
     own-version "0.0.2"
+
+express-session@^1.15.1:
+  version "1.15.1"
+  resolved "https://registry.yarnpkg.com/express-session/-/express-session-1.15.1.tgz#9abba15971beea7ad98da5a4d25ed92ba4a2984e"
+  dependencies:
+    cookie "0.3.1"
+    cookie-signature "1.0.6"
+    crc "3.4.4"
+    debug "2.6.1"
+    depd "~1.1.0"
+    on-headers "~1.0.1"
+    parseurl "~1.3.1"
+    uid-safe "~2.1.3"
+    utils-merge "1.0.0"
 
 express@^4.14.0:
   version "4.14.1"
@@ -1247,9 +1273,13 @@ lodash@^3.7.0, lodash@^3.9.1:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.0, lodash@^4.16.4, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.6.1:
+lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.0, lodash@^4.16.4, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.6.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
+
+lodash@~3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.2.0.tgz#4bf50a3243f9aeb0bac41a55d3d5990675a462fb"
 
 lolex@1.3.2:
   version "1.3.2"
@@ -1447,6 +1477,10 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
+node-forge@0.2.24:
+  version "0.2.24"
+  resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.2.24.tgz#fa6f846f42fa93f63a0a30c9fbff7b4e130e0858"
+
 node-rsa@^0.3.2:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/node-rsa/-/node-rsa-0.3.4.tgz#0d13c73d3cbe3b3dc7457a81a2657f40e4426be6"
@@ -1590,6 +1624,29 @@ parseurl@~1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.1.tgz#c8ab8c9223ba34888aa64a297b28853bec18da56"
 
+passport-saml@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/passport-saml/-/passport-saml-0.15.0.tgz#7d45c07baaf80d8e2cf898367132a5e4c0535cad"
+  dependencies:
+    passport-strategy "*"
+    q "1.1.x"
+    xml-crypto "0.8.x"
+    xml-encryption "~0.7"
+    xml2js "0.4.x"
+    xmlbuilder "2.5.x"
+    xmldom "0.1.x"
+
+passport-strategy@*, passport-strategy@1.x.x:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/passport-strategy/-/passport-strategy-1.0.0.tgz#b5539aa8fc225a3d1ad179476ddf236b440f52e4"
+
+passport@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/passport/-/passport-0.3.2.tgz#9dd009f915e8fe095b0124a01b8f82da07510102"
+  dependencies:
+    passport-strategy "1.x.x"
+    pause "0.0.1"
+
 path-exists@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/path-exists/-/path-exists-2.1.0.tgz#0feb6c64f0fc518d9a754dd5efb62c7022761f4b"
@@ -1663,6 +1720,10 @@ punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
+q@1.1.x:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/q/-/q-1.1.2.tgz#6357e291206701d99f197ab84e57e8ad196f2a89"
+
 qs@0.6.6:
   version "0.6.6"
   resolved "https://registry.yarnpkg.com/qs/-/qs-0.6.6.tgz#6e015098ff51968b8a3c819001d5f2c89bc4b107"
@@ -1678,6 +1739,10 @@ qs@6.2.1:
 qs@~6.3.0:
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.1.tgz#918c0b3bcd36679772baf135b1acb4c1651ed79d"
+
+random-bytes@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/random-bytes/-/random-bytes-1.0.0.tgz#4f68a1dc0ae58bd3fb95848c30324db75d64360b"
 
 randomatic@^1.1.3:
   version "1.1.6"
@@ -1819,6 +1884,10 @@ rimraf@^2.3.3, rimraf@^2.4.3, rimraf@^2.4.4, rimraf@^2.5.4:
 samsam@1.1.2, samsam@~1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/samsam/-/samsam-1.1.2.tgz#bec11fdc83a9fda063401210e40176c3024d1567"
+
+sax@>=0.6.0:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.2.tgz#fd8631a23bc7826bef5d871bdb87378c95647828"
 
 "semver@2 || 3 || 4 || 5", semver@^5.3.0:
   version "5.3.0"
@@ -2086,6 +2155,13 @@ uglify-to-browserify@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz#6e0924d6bda6b5afe349e39a6d632850a0f882b7"
 
+uid-safe@~2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/uid-safe/-/uid-safe-2.1.3.tgz#077e264a00b3187936b270bb7376a26473631071"
+  dependencies:
+    base64-url "1.3.3"
+    random-bytes "~1.0.0"
+
 uid2@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/uid2/-/uid2-0.0.3.tgz#483126e11774df2f71b8b639dcd799c376162b82"
@@ -2169,6 +2245,58 @@ write-file-atomic@^1.1.4:
     graceful-fs "^4.1.11"
     imurmurhash "^0.1.4"
     slide "^1.1.5"
+
+xml-crypto@0.8.x:
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/xml-crypto/-/xml-crypto-0.8.5.tgz#2bbcfb3eb33f3a82a218b822bf672b6b1c20e538"
+  dependencies:
+    xmldom "=0.1.19"
+    xpath.js ">=0.0.3"
+
+xml-encryption@~0.7:
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/xml-encryption/-/xml-encryption-0.7.4.tgz#42791ec64d556d2455dcb9da0a54123665ac65c7"
+  dependencies:
+    async "~0.2.7"
+    ejs "~0.8.3"
+    node-forge "0.2.24"
+    xmldom "~0.1.15"
+    xpath "0.0.5"
+
+xml2js@0.4.x:
+  version "0.4.17"
+  resolved "https://registry.yarnpkg.com/xml2js/-/xml2js-0.4.17.tgz#17be93eaae3f3b779359c795b419705a8817e868"
+  dependencies:
+    sax ">=0.6.0"
+    xmlbuilder "^4.1.0"
+
+xmlbuilder@2.5.x:
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-2.5.2.tgz#5ab88fc508ab2ff14873010b56163d3f92b19325"
+  dependencies:
+    lodash "~3.2.0"
+
+xmlbuilder@^4.1.0:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-4.2.1.tgz#aa58a3041a066f90eaa16c2f5389ff19f3f461a5"
+  dependencies:
+    lodash "^4.0.0"
+
+xmldom@0.1.x, xmldom@~0.1.15:
+  version "0.1.27"
+  resolved "https://registry.yarnpkg.com/xmldom/-/xmldom-0.1.27.tgz#d501f97b3bdb403af8ef9ecc20573187aadac0e9"
+
+xmldom@=0.1.19:
+  version "0.1.19"
+  resolved "https://registry.yarnpkg.com/xmldom/-/xmldom-0.1.19.tgz#631fc07776efd84118bf25171b37ed4d075a0abc"
+
+xpath.js@>=0.0.3:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/xpath.js/-/xpath.js-1.0.7.tgz#7e94627f541276cbc6a6b02b5d35e9418565b3e4"
+
+xpath@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/xpath/-/xpath-0.0.5.tgz#454036f6ef0f3df5af5d4ba4a119fb75674b3e6c"
 
 xtend@^4.0.0:
   version "4.0.1"
