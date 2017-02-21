@@ -14,6 +14,8 @@ envConfig = {
   SAML_LOGOUT_URL: envalid.url { desc: 'Logout URL for IdP' }
   SAML_ISSUER: envalid.str { desc: 'SAML IdP issuer name' }
   SAML_CERT: base64 { desc: 'Base64 encoded certificate for IdP' }
+  AUTHENTICATOR_PRIVATE_KEY: base64 { desc: 'Base64 encoded private key for meshblu' }
+  AUTHENTICATOR_NAMESPACE: envalid.str { desc: 'namespace for authenticator devices' }
 }
 
 class Command
@@ -22,6 +24,8 @@ class Command
     @serverOptions = {
       meshbluConfig : new MeshbluConfig().toJSON()
       port          : env.PORT
+      privateKey    : env.AUTHENTICATOR_PRIVATE_KEY
+      namespace     : env.AUTHENTICATOR_NAMESPACE
       env           : env
     }
 

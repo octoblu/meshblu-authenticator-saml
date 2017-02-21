@@ -10,9 +10,12 @@ SamlStrategy            = require './strategies/saml-strategy'
 class Server
   constructor: (options) ->
     { @logFn, @disableLogging, @port } = options
-    { @meshbluConfig, @env } = options
-    throw new Error 'Missing meshbluConfig' unless @meshbluConfig?
-    throw new Error 'Missing env' unless @env?
+    { @meshbluConfig, @env, @privateKey } = options
+    { @namespace } = options
+    throw new Error 'Server: requires meshbluConfig' unless @meshbluConfig?
+    throw new Error 'Server: requires env' unless @env?
+    throw new Error 'Server: requires privateKey' unless @privateKey?
+    throw new Error 'Server: requires namespace' unless @namespace?
 
   address: =>
     @server.address()
@@ -25,9 +28,10 @@ class Server
 
     app.use session @_sessionOptions()
 
-    authenticatorService = new AuthenticatorService
+    authenticatorService = new AuthenticatorService { @meshbluConfig, @privateKey, @namespace }
     passport.serializeUser   (user, done) => done null, user
     passport.deserializeUser (user, done) => done null, user
+
     passport.use new SamlStrategy(@env).get(authenticatorService.authenticate)
 
     app.use passport.initialize()
