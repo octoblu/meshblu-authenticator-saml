@@ -58,6 +58,8 @@ class AuthenticatorService
       data:
         user:
           metadata: { firstName, lastName, email }
+        email: email
+        name: "#{firstName} #{lastName}"
       user_id: email
       secret: DEFAULT_PASSWORD
     }, (error, device) =>
