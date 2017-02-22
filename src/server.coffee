@@ -1,11 +1,14 @@
 enableDestroy           = require 'server-destroy'
 octobluExpress          = require 'express-octoblu'
-session                 = require 'express-session'
+session                 = require 'cookie-session'
+cookieParser            = require 'cookie-parser'
 passport                = require 'passport'
 Router                  = require './router'
 AuthenticatorService    = require './services/authenticator-service'
 AuthenticatorController = require './controllers/authenticator-controller'
 SamlStrategy            = require './strategies/saml-strategy'
+
+SESSION_SECRET='some-secret-that-does-not-really-matter'
 
 class Server
   constructor: (options) ->
@@ -26,6 +29,7 @@ class Server
   run: (callback) =>
     app = octobluExpress { @logFn, @disableLogging }
 
+    app.use cookieParser()
     app.use session @_sessionOptions()
 
     authenticatorService = new AuthenticatorService { @meshbluConfig, @privateKey, @namespace }
@@ -50,12 +54,11 @@ class Server
 
   _sessionOptions: =>
     return {
-      secret: 'some-secret-that-does-not-really-matter'
+      secret: SESSION_SECRET
       resave: false
       saveUninitialized: true
-      cookie:
-        secure: process.env.NODE_ENV == 'production'
-        maxAge: 60 * 60 * 1000
+      secure: process.env.NODE_ENV == 'production'
+      maxAge: 60 * 60 * 1000
     }
 
 

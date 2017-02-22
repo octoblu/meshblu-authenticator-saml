@@ -7,19 +7,17 @@ class AuthenticatorController
 
   initialize: (request, response, next) =>
     { callbackUrl } = request.query
-    request.session.callbackUrl = callbackUrl if callbackUrl?
-    return next() if callbackUrl?
-    request.session.destroy next
+    response.cookie 'callbackUrl', callbackUrl, { maxAge: 60 * 60 * 1000 }
+    next()
 
   finish: (request, response) =>
-    { callbackUrl } = request.session
+    { callbackUrl } = request.cookies
     { user } = request
     { uuid, token } = user
     debug 'sucessful', callbackUrl, user
-    request.session.destroy (error) =>
-      return response.sendError error if error?
-      return response.send user unless callbackUrl?
-      response.redirect @_rebuildUrl { callbackUrl, uuid, token }
+    response.cookie 'callbackUrl', null, maxAge: -1
+    return response.send user unless callbackUrl?
+    response.redirect @_rebuildUrl { callbackUrl, uuid, token }
 
   _rebuildUrl: ({ callbackUrl, uuid, token }) =>
     uriParams = url.parse callbackUrl, true
